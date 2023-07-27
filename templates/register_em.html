@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}
+Register
+{% endblock %}
+
+{% block main %}
+<h1>Register</h1>
+<p>{{ message }}</p>
+<p>Here's your next challenge, choose your email!</p>
+<p>By the way, your email must be exactly <pre>#me&email*net</pre></p>
+<form action="/register" method="post">
+    <input autocomplete="off" autofocus required type="email" name="email" placeholder="Email">
+    <button type="submit" name="validate" value="email">Apply Email</button>
+</form>
+{% endblock %}

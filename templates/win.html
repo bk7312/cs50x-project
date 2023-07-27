@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+<h1>You WIN!</h1>
+<p>{{ message }}</p>
+<form action="/" method="post">
+    <button type="submit" name="reset" value="reset">Reset the game?</button>
+</form>
+{% endblock %}

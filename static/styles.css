@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    user-select: none;
+}
+
+.terms-box {
+    height: 300px;
+    overflow-y: scroll;
+}
