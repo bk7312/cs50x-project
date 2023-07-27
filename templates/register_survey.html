@@ -6,8 +6,8 @@ Register
 {% block main %}
 <h1>Register</h1>
 <p>{{ message }}</p>
-<p>Here's your next challenge, choose your favorite color!</p>
-<p>By the way, you must choose and submit pink.</p>
+<p>Here's your next challenge, select your favorite color.</p>
+<p>You must choose and submit pink.</p>
 <form action="/register" method="post">
     <select name="survey" required>
         <option selected disabled value="">What is your favorite color?</option>
@@ -20,6 +20,6 @@ Register
         <option value="black">Black</option>
         <option value="white">White</option>
     </select>
-    <button type="submit" name="validate" value="survey">Submit survey</button>
+    <button type="submit" name="validate" value="survey">Submit</button>
 </form>
 {% endblock %}

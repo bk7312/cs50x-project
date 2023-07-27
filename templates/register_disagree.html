@@ -7,36 +7,38 @@ Register
 <h1>Register</h1>
 <p>{{ message }}</p>
 <p>Here's your last challenge, read the terms and conditions!</p>
-<p>By the way, you must read the terms and conditions, check the box, and disagree to continue.</p>
-<div class="terms-box">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet sit
-        architecto neque voluptatibus vitae recusandae iste in.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet sit
-        architecto neque voluptatibus vitae recusandae iste in, sequi eos porro cumque consectetur pariatur.</p>
-    <ol>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet
-            sit architecto neque voluptatibus vitae recusandae iste in, sequi eos porro cumque consectetur pariatur.
-        </li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet
-            sit architecto neque voluptatibus vitae.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, sequi eos porro cumque
-            consectetur pariatur.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet
-            sit architecto neque voluptatibus vitae recusandae iste in.</li>
-    </ol>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae dolore, qui accusamus inventore deserunt
-        voluptas odit saepe eaque magnam vel ea dolores amet, quam voluptatum soluta veritatis. Cupiditate, repellat
-        explicabo. Reiciendis tempora perferendis voluptatem nisi accusamus quas? Illum corrupti doloremque quia autem
-        aliquam quo est veniam nesciunt, sed facere dolor soluta enim obcaecati mollitia modi temporibus repudiandae
-        asperiores ducimus architecto.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae dolore, qui accusamus inventore deserunt
-        voluptas odit saepe eaque magnam vel ea dolores amet, quam voluptatum soluta veritatis. Cupiditate, repellat
-        explicabo. Reiciendis tempora perferendis voluptatem nisi accusamus quas?</p>
+<p>You must read the terms and conditions, check the box, and disagree to continue.</p>
+<div class="terms-container">
+    <div class="terms-box">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet sit
+            architecto neque voluptatibus vitae recusandae iste in.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet sit
+            architecto neque voluptatibus vitae recusandae iste in, sequi eos porro cumque consectetur pariatur.</p>
+        <ol>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet
+                sit architecto neque voluptatibus vitae recusandae iste in, sequi eos porro cumque consectetur pariatur.
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet
+                sit architecto neque voluptatibus vitae.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, sequi eos porro cumque
+                consectetur pariatur.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet
+                sit architecto neque voluptatibus vitae recusandae iste in.</li>
+        </ol>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae dolore, qui accusamus inventore deserunt
+            voluptas odit saepe eaque magnam vel ea dolores amet, quam voluptatum soluta veritatis. Cupiditate, repellat
+            explicabo. Reiciendis tempora perferendis voluptatem nisi accusamus quas? Illum corrupti doloremque quia autem
+            aliquam quo est veniam nesciunt, sed facere dolor soluta enim obcaecati mollitia modi temporibus repudiandae
+            asperiores ducimus architecto.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae dolore, qui accusamus inventore deserunt
+            voluptas odit saepe eaque magnam vel ea dolores amet, quam voluptatum soluta veritatis. Cupiditate, repellat
+            explicabo. Reiciendis tempora perferendis voluptatem nisi accusamus quas?</p>
+    </div>
 </div>
 <form action="/register" method="post">
     <input required type="checkbox" name="terms" id="terms">
-    <label for="terms">I've read the terms and conditions</label>
-    <button type="submit" name="validate" value="agree">And I agree!</button>
+    <label for="terms">I have read the terms and conditions...</label>
+    <button type="submit" name="validate" value="agree">and I agree!</button>
 </form>
 {% endblock %}
