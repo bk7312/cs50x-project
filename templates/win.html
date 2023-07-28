@@ -4,9 +4,15 @@ Login
 {% endblock %}
 
 {% block main %}
-<h1>You WIN!</h1>
-<p>{{ message }}</p>
-<form action="/" method="post">
-    <button type="submit" name="reset" value="reset">Reset the game?</button>
-</form>
+<div class="main-box">
+    <h1>Congrats, you have successfully logged in!</h1>
+    <p>Thoughout this game, you have learned how to use your browser's built-in developer tools to inspect websites and
+        use it to modify and bypass client-side input validation.</p>
+    <p>And if you are a developer, you should hopefully already know that client-side validation can't be trusted and
+        its main purpose is to guide the users into making correct inputs. It's best practice to implement server-side 
+        validation if you want to protect your website from malicious inputs.</p>
+    <form action="/" method="post" class="game-form">
+        <button class="btn btn-primary" type="submit" name="reset" value="reset">Reset the game?</button>
+    </form>
+</div>
 {% endblock %}

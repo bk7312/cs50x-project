@@ -26,28 +26,37 @@ def index():
     if request.method == "POST":
         if request.form.get("reset") == "reset":
             session.clear()
-        return render_template("index.html")
+            message = "Game reset done, please feel free to play again."
+        return render_template("index.html", message=message)
     
     else:
-        return render_template("index.html")
+        if session.get("win"):
+            message = "...and you won! So what's next? You could always reset the game and play again if you want."
+        elif session.get("user_created"):
+            message = "Congrats on creating a username and password, onwards to the login page!"
+        else:
+            message = "Don't have a username and password? Find a way to register!"
+
+        return render_template("index.html", message=message)
 
 
 @app.route("/login", methods=["GET","POST"])
 def login():
     if request.method == "POST":
         if not request.form.get("username"):
-            return render_template("login.html", message="Must enter a valid username!")
+            return render_template("login.html", message="Must enter a valid username.")
         
         username = request.form.get("username")
 
         if session.get("user_created") and session["username"] == username and not request.form.get("password"):
-            return render_template("win.html", message="Congrats, you have successfully logged in!")
+            session["win"] = True
+            return render_template("win.html")
                 
-        return render_template("login.html", message="Must enter a valid username/password!")
+        return render_template("login.html", message="Must enter a valid username/password.")
 
     else:
         if session.get("user_created"):
-            message = "Congrats on creating a username and password! You still remember it right?"
+            message = "Congrats on creating a username and password. Now for the final challenge, login and win the game! You still remember your username and password right?"
         else:
             message = "Don't have a username and password? Find a way to register!"
 
@@ -66,7 +75,7 @@ def register():
         match type:
             case "username":
                 if not request.form.get("username"):
-                    return render_template("register.html", message="Must enter a valid username!")
+                    return render_template("register.html", message="Must enter a valid username")
                 
                 username = request.form.get("username")
 
@@ -74,47 +83,50 @@ def register():
                     session["username"] = username
                     return render_template("register_pwd.html", message="Congrats on getting that username!")
                 
-                return render_template("register.html", message="Username must be exactly 16 characters long!")
+                return render_template("register.html", message="Username must be exactly 16 characters long.")
             
 
             case "password":
                 if not request.form.get("password") and not request.form.get("confirm"):
                     return render_template("register_survey.html", message="Congrats on entering an empty password!")
                 
-                return render_template("register_pwd.html", message="Please find a way to submit a blank password!")
+                return render_template("register_pwd.html", message="Please find a way to submit a blank password.")
             
 
             case "survey":
                 if not request.form.get("survey"):
-                    return render_template("register_survey.html", message="Please choose a color!")
+                    return render_template("register_survey.html", message="Please choose a color.")
                 
                 color = request.form.get("survey")
 
                 if color.lower() == 'pink':
                     return render_template("register_em.html", message="Glad to know you like pink!")
                 
-                return render_template("register_survey.html", message="Please select pink!")
+                return render_template("register_survey.html", message="Please select pink.")
             
 
             case "email":
                 if not request.form.get("email"):
-                    return render_template("register_em.html", message="Please enter your email!")
+                    return render_template("register_em.html", message="Please enter your email.")
                 
                 email = request.form.get("email")
 
                 if email == '#me&email*net':
-                    return render_template("register_disagree.html", message="What a nice email address!")
+                    return render_template("register_disagree.html", message="What a unique email address!")
                 
-                return render_template("register_em.html", message="Please enter the correct email!")
+                return render_template("register_em.html", message="Please enter the correct email.")
             
 
             case "agree":
-                return render_template("register_disagree.html", message="Please disagree!")
+                if not request.form.get("terms"):
+                    return render_template("register_disagree.html", message="Please tick the box.")
+                
+                return render_template("register_disagree.html", message="Please disagree.")
 
 
             case "disagree":
                 if not request.form.get("terms"):
-                    return render_template("register_disagree.html", message="Please check the box!")
+                    return render_template("register_disagree.html", message="Please tick the box.")
                 
                 session["user_created"] = True
 

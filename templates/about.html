@@ -4,62 +4,66 @@ About
 {% endblock %}
 
 {% block main %}
-<h1>About</h1>
-<p>This game aims to do three things.</p>
-<ol>
-    <li>Teach you how to use your browser's developer tools.</li>
-    <li>Show how easy it is to bypass client-side input validation.</li>
-    <li>Show the importance of server-side input validation.</li>
-</ol>
+<div class="main-box">
+    <h1>About</h1>
+    <p>This game aims to do three things.</p>
+    <ol>
+        <li>Introduce the casual user to their browser's developer tools.</li>
+        <li>Show how easy it is to bypass client-side input validation.</li>
+        <li>Stress the importance of server-side input validation.</li>
+    </ol>
 
-<div class="accordion" id="accordionPanelsStayOpenExample">
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                aria-controls="panelsStayOpen-collapseOne">
-                My browser has developer tools?
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-            <div class="accordion-body">
-                If you're viewing this page on a laptop/desktop browser, chances are, you can open your browser's
-                developer tools from the settings menu somewhere. If you're viewing this on a mobile browser, you
-                probably don't have access to the developer tools.
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    My browser has developer tools?
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    If you're viewing this page on a laptop/desktop browser, chances are, you can open your browser's
+                    developer tools from the settings menu somewhere or by right-clicking anywhere and selecting
+                    "Inspect". If you're viewing this on a mobile browser, you probably don't have access to the
+                    developer tools.
+                </div>
             </div>
         </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseTwo">
-                What can I see from the developer tools?
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-            <div class="accordion-body">
-                Lots of things, you can see how the html page is rendered. You can play around with the webpage and
-                modify it to your liking. You can see how your browser communicates with the internet, and so much more!
-                For more info on how to use the developer tools, click <a
-                    href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools">here</a>.
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    What can I see from the developer tools?
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    Lots of things, you can see how the html page is rendered. You can play around with the webpage and
+                    modify it to your liking under the "Elements" tab. You can see how your browser communicates with
+                    the server/internet under the "Network" tab, and you can even play around with JavaScript and write
+                    some code under the "Console" tab. For more info on the developer tools, click <a
+                        href="https://developer.chrome.com/docs/devtools/overview/">here</a>.
+                </div>
             </div>
         </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree">
-                What is this whole client-side vs server-side input validation thing?
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-            <div class="accordion-body">
-                Client-side input validation refers to validating user input while on the browser. As you can probably
-                tell from the game, it's very easy to break it. Which is why it's crucial to implement server-side input
-                validation and check the user input on the server. Client-side input validation is still useful to
-                implement as it help guides the user into inputting correctly
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    What is this whole client-side vs server-side input validation thing?
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    Client-side input validation refers to validating user input while on the browser. As you can
+                    probably tell from the game, it's very easy to break it. Which is why it's crucial to implement
+                    server-side input validation and check the user's input on the server. Client-side input validation 
+                    is still useful to implement as it can help guide the user into making correct inputs.
+                </div>
             </div>
         </div>
     </div>

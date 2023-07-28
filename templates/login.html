@@ -4,12 +4,13 @@ Login
 {% endblock %}
 
 {% block main %}
-<h1>Login</h1>
-<p>{{ message }}</p>
-<p>All you gotta do is login to win!</p>
-<form action="/login" method="post">
-    <input autocomplete="off" autofocus required type="text" name="username" placeholder="Username" minlength="4" maxlength="8">
-    <input required type="password" name="password" placeholder="Password" minlength="8">
-    <button type="submit">Login</button>
-</form>
+<div class="main-box">
+    <p class="text-center">{{ message }}</p>
+    <form action="/login" method="post" class="game-form">
+        <input autocomplete="off" autofocus required type="text" name="username" placeholder="Username" minlength="4"
+            maxlength="8">
+        <input required type="password" name="password" placeholder="Password" minlength="8">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
 {% endblock %}

@@ -4,41 +4,65 @@ Register
 {% endblock %}
 
 {% block main %}
-<h1>Register</h1>
-<p>{{ message }}</p>
-<p>Here's your last challenge, read the terms and conditions!</p>
-<p>You must read the terms and conditions, check the box, and disagree to continue.</p>
-<div class="terms-container">
-    <div class="terms-box">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet sit
-            architecto neque voluptatibus vitae recusandae iste in.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet sit
-            architecto neque voluptatibus vitae recusandae iste in, sequi eos porro cumque consectetur pariatur.</p>
-        <ol>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet
-                sit architecto neque voluptatibus vitae recusandae iste in, sequi eos porro cumque consectetur pariatur.
-            </li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet
-                sit architecto neque voluptatibus vitae.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, sequi eos porro cumque
-                consectetur pariatur.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem amet
-                sit architecto neque voluptatibus vitae recusandae iste in.</li>
-        </ol>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae dolore, qui accusamus inventore deserunt
-            voluptas odit saepe eaque magnam vel ea dolores amet, quam voluptatum soluta veritatis. Cupiditate, repellat
-            explicabo. Reiciendis tempora perferendis voluptatem nisi accusamus quas? Illum corrupti doloremque quia autem
-            aliquam quo est veniam nesciunt, sed facere dolor soluta enim obcaecati mollitia modi temporibus repudiandae
-            asperiores ducimus architecto.</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae dolore, qui accusamus inventore deserunt
-            voluptas odit saepe eaque magnam vel ea dolores amet, quam voluptatum soluta veritatis. Cupiditate, repellat
-            explicabo. Reiciendis tempora perferendis voluptatem nisi accusamus quas?</p>
+<div class="main-box">
+    <h1>Register</h1>
+    <p>{{ message }}</p>
+    <p>Here's your last challenge, read the terms and conditions!</p>
+    <p>You must read the terms and conditions, tick the box, and disagree to continue.</p>
+    <div class="terms-container">
+        <div class="terms-box">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem
+                amet sit architecto neque voluptatibus vitae recusandae iste in.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate rem
+                amet sit architecto neque voluptatibus vitae recusandae iste in, sequi eos porro cumque consectetur
+                pariatur.</p>
+            <ol>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate
+                    rem amet sit architecto neque voluptatibus vitae recusandae iste in, sequi eos porro cumque
+                    consectetur pariatur.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate
+                    rem amet sit architecto neque voluptatibus vitae.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, sequi eos porro
+                    cumque consectetur pariatur.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, id commodi, ipsa quos cupiditate
+                    rem amet sit architecto neque voluptatibus vitae recusandae iste in.</li>
+            </ol>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae dolore, qui accusamus inventore
+                deserunt voluptas odit saepe eaque magnam vel ea dolores amet, quam voluptatum soluta veritatis.
+                Cupiditate, repellat explicabo. Reiciendis tempora perferendis voluptatem nisi accusamus quas? Illum
+                corrupti doloremque quia autem aliquam quo est veniam nesciunt, sed facere dolor soluta enim obcaecati
+                mollitia modi temporibus repudiandae asperiores ducimus architecto.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae dolore, qui accusamus inventore
+                deserunt voluptas odit saepe eaque magnam vel ea dolores amet, quam voluptatum soluta veritatis.
+                Cupiditate, repellat explicabo. Reiciendis tempora perferendis voluptatem nisi accusamus quas?</p>
+        </div>
     </div>
+    <form action="/register" method="post" class="terms-form">
+        <input disabled type="checkbox" name="terms" id="terms">
+        <label for="terms">I have read the terms and conditions...</label>
+        <button class="btn btn-outline-secondary btn-sm" type="submit" name="validate" value="agree">and I
+            agree!</button>
+    </form>
+    <details>
+        <summary>Need a hint?</summary>
+        We both know that you didn't read the terms and conditions, which might be why you can't tick the box! Jokes
+        aside, try inspecting the checkbox to find a way to tick it, and also the "and I agree!" button to somehow
+        "disagree" instead.
+        <details>
+            <summary>How do I inspect the checkbox and the "and I agree" button?</summary>
+            I'm assuming you're on a desktop browser, if you are, right-click on the checkbox or button and click
+            "Inspect". You should see your browser's developer tool open up. Under the "Elements" tab, look for the
+            checkbox and button and try to understand how they work. Then find a way to tick the checkbox and change
+            the button to say "disagree" instead.
+            Unfortunately, you probably can't do this on a mobile browser on Android/iOS.
+            <details>
+                <summary>I give up...</summary>
+                You should see that the checkbox, which is an input of type="checkbox" is "disabled". Double click on
+                "disabled" and delete it. As for the button, it has a value="agree" so change it to "disagree" instead
+                and you should be able to proceed.
+            </details>
+        </details>
+    </details>
 </div>
-<form action="/register" method="post">
-    <input required type="checkbox" name="terms" id="terms">
-    <label for="terms">I have read the terms and conditions...</label>
-    <button type="submit" name="validate" value="agree">and I agree!</button>
-</form>
 {% endblock %}

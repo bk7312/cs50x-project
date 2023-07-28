@@ -4,11 +4,34 @@ Home
 {% endblock %}
 
 {% block main %}
-<h1>Welcome to the Login Challenge!</h1>
-<p>Can you hack your way through this login challenge?</p>
-<p>All you need to do is simply login to win!</p>
-<p>Don't have a username or password to login with? Not to worry, simply head on over to the registration page and
-    register for one! No email required!
-</p>
-<p>Uh-oh, it looks like the link to the registration page is grayed out. Find another way to get there!</p>
+<div class="main-box">
+    <h1>Welcome to the Login2Win Challenge!</h1>
+    <p>All you have to do in this game is simply login to win!</p>
+    <p>{{ message }}</p>
+    {% if session["win"] %}
+    <form action="/" method="post" class="game-form">
+        <button class="btn btn-primary" type="submit" name="reset" value="reset">Reset the game?</button>
+    </form>
+    {% else %}
+    <p>Note: For best experience, please visit this page on a desktop browser.</p>
+    <details>
+        <summary>Need a hint?</summary>
+        As you can see from the navigation bar, one of the link is grayed out so you can't click on it.
+        Perhaps you can try inspecting the page to find the link?
+        <details>
+            <summary>How do I inspect the page?</summary>
+            I'm assuming you're on a desktop browser, if you are, right-click on the link and click "Inspect".
+            You should see your browser's developer tool open up. Under the "Elements" tab, look for the link
+            on the navigation bar. Once you find it, you can visit the link. Unfortunately, you probably can't
+            do this on a mobile browser on Android/iOS.
+            <details>
+                <summary>I give up...</summary>
+                You should see something like class="nav-link disabled" href="/register" or href="/login", clicking on
+                the link in href should work. You can also navigate directly to login2win.onrender.com/register instead.
+                Alternatively, can remove the word "disabled" and leave class="nav-link" to make the link clickable.
+            </details>
+        </details>
+    </details>
+    {% endif %}
+</div>
 {% endblock %}
