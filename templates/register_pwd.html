@@ -4,13 +4,32 @@ Register
 {% endblock %}
 
 {% block main %}
-<h1>Register</h1>
-<p>{{ message }}</p>
-<p>Here's your second challenge, create a password!</p>
-<p>To proceed, find a way to successfully submit an empty password.</p>
-<form action="/register" method="post">
-    <input autofocus required type="password" name="password" placeholder="Password" minlength="8">
-    <input required type="password" name="confirm" placeholder="Confirm password" minlength="8">
-    <button type="submit" name="validate" value="password">Apply Password</button>
-</form>
+<div class="main-box">
+    <h1>Register</h1>
+    <p>{{ message }}</p>
+    <p>Here's your second challenge, create a password!</p>
+    <p>To proceed, find a way to successfully submit an empty password.</p>
+    <form action="/register" method="post" class="game-form">
+        <input autofocus required type="password" name="password" placeholder="Password" minlength="8">
+        <input required type="password" name="confirm" placeholder="Confirm password" minlength="8">
+        <button class="btn btn-primary" type="submit" name="validate" value="password">Submit Password</button>
+    </form>
+    <details>
+        <summary>Need a hint?</summary>
+        How are you supposed to submit an empty password when the browser keeps asking you to fill it in when you
+        try to submit? Try inspecting the password input field.
+        <details>
+            <summary>How do I inspect the password input field?</summary>
+            I'm assuming you're on a desktop browser, if you are, right-click on the input field and click "Inspect".
+            You should see your browser's developer tool open up. Under the "Elements" tab, look for the two password
+            input fields. Once you find it, try to find what might be preventing you from submitting an empty password.
+            Unfortunately, you probably can't do this on a mobile browser on Android/iOS.
+            <details>
+                <summary>I give up...</summary>
+                You should see two input fields of type="password" and both of them has the word "required" on them.
+                Try double clicking on it and remove the two "required" to submit an empty password.
+            </details>
+        </details>
+    </details>
+</div>
 {% endblock %}

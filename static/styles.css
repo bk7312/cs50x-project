@@ -18,3 +18,44 @@ nav {
     padding: 1em 2em;
     overflow-y: auto;
 }
+
+.terms-form {
+    padding: 1em 0.5em;
+}
+
+input, select {
+    padding: 0.5em 1em;
+    border: 0.8px solid;
+    border-radius: 5px;
+}
+
+.game-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em 0;
+    max-width: 400px;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.main-box {
+    max-width: 800px;
+    padding: 1em;
+    margin: auto;
+}
+
+.main-box h1 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+details {
+    padding: 1em 0;
+}
+
+.mono {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+}

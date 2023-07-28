@@ -4,22 +4,41 @@ Register
 {% endblock %}
 
 {% block main %}
-<h1>Register</h1>
-<p>{{ message }}</p>
-<p>Here's your next challenge, select your favorite color.</p>
-<p>You must choose and submit pink.</p>
-<form action="/register" method="post">
-    <select name="survey" required>
-        <option selected disabled value="">What is your favorite color?</option>
-        <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="cyan">Cyan</option>
-        <option value="yellow">Yellow</option>
-        <option value="magenta">Magenta</option>
-        <option value="black">Black</option>
-        <option value="white">White</option>
-    </select>
-    <button type="submit" name="validate" value="survey">Submit</button>
-</form>
+<div class="main-box">
+    <h1>Register</h1>
+    <p>{{ message }}</p>
+    <p>Here's your next challenge, select your favorite color.</p>
+    <p>You must choose and submit pink.</p>
+    <form action="/register" method="post" class="game-form">
+        <select name="survey" required>
+            <option selected disabled value="">What is your favorite color?</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="cyan">Cyan</option>
+            <option value="yellow">Yellow</option>
+            <option value="magenta">Magenta</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+        </select>
+        <button class="btn btn-primary" type="submit" name="validate" value="survey">Submit</button>
+    </form>
+    <details>
+        <summary>Need a hint?</summary>
+        How are you supposed to select "pink" when it doesn't even exist in the dropdown? Try to inspect the dropdown
+        menu, see what happens under the hood when you make a selection.
+        <details>
+            <summary>How do I inspect the dropdown?</summary>
+            I'm assuming you're on a desktop browser, if you are, right-click on the dropdown menu and click "Inspect".
+            You should see your browser's developer tool open up. Under the "Elements" tab, look for the various
+            options and see how it works, try to find a way to submit something that's not in the options.
+            Unfortunately, you probably can't do this on a mobile browser on Android/iOS.
+            <details>
+                <summary>I give up...</summary>
+                You should see several options with value="color", simply change any one of them to "pink" and select
+                it, then click on submit.
+            </details>
+        </details>
+    </details>
+</div>
 {% endblock %}
